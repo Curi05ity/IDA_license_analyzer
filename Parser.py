@@ -40,8 +40,6 @@ def process_log_file(filepath):
                             max_concurrent_sessions[license] = sessions[license] #license = 1
                         else:
                             max_concurrent_sessions[license] = max(max_concurrent_sessions[license], sessions[license])
-                            #if license == "IDAPROFW" and max_concurrent_sessions[license] == 3:
-                             #   print('IDAPROFW' + ' | ' + timestamp.__str__())
                     prev_user_machine[license] = user
                     current_users_per_license[license].add(user)
                 elif action == 'IN':
@@ -59,6 +57,6 @@ def print_max_concurrent_sessions_table(max_concurrent_sessions):
         print(f'{license:<20} | {max_sessions:<20}')
 
 if __name__ == '__main__':
-    log_file_path = r"C:\Users\lavi\Desktop\hexrays_22_23.txt"  # Update this to the path of your log file
+    log_file_path = r"<<< Log File Path Here>>>"  # Update this to the path of your log file
     max_concurrent_sessions = process_log_file(log_file_path)
     print_max_concurrent_sessions_table(max_concurrent_sessions)
